@@ -1,0 +1,636 @@
+<main class="about-page">
+
+  <!-- ======================================================
+       HERO
+       ====================================================== -->
+
+  <section class="about-hero" aria-labelledby="about-title">
+    <img class="about-hero__image" src="/space/weekend.jpg" alt="" width="2560" height="1920" fetchpriority="high" />
+
+    <div class="about-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container about-hero__container">
+      <div class="about-hero__content">
+        <p class="about-kicker">
+          About La Quinta · Nyamata
+        </p>
+
+        <h1 id="about-title">
+          A place to rest well,
+          <span>eat well, and feel welcome.</span>
+        </h1>
+
+        <p class="about-hero__lead">
+          La Quinta brings comfortable stays, relaxed dining,
+          and warm hospitality together in Nyamata, Bugesera.
+          Come for the night, the table, or simply the time
+          spent together.
+        </p>
+      </div>
+
+      <div class="about-hero__footer">
+        <div>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <span>Nyamata · Bugesera District · Rwanda</span>
+        </div>
+
+        <a [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <span>{{ phoneNumber }}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       INTRODUCTION
+       ====================================================== -->
+
+  <section class="about-intro about-section" aria-labelledby="about-intro-title">
+    <div class="container about-intro__grid">
+
+      <div class="about-intro__heading">
+        <p class="about-kicker">
+          Our place
+        </p>
+
+        <h2 id="about-intro-title">
+          Hospitality that feels easy and familiar.
+        </h2>
+      </div>
+
+      <div class="about-intro__copy">
+        <p class="about-lead">
+          La Quinta is a place for travellers, families,
+          professionals, neighbours, and anyone looking for
+          somewhere comfortable to pause in Nyamata.
+        </p>
+
+        <p>
+          We bring together the things that make time away from
+          home feel easier: a comfortable place to rest, food
+          worth sitting down for, and people ready to welcome you.
+        </p>
+
+        <p>
+          Some guests arrive with luggage and stay the night.
+          Others come through the door to share a meal, catch up
+          with friends, or spend an evening together. Both are
+          part of what La Quinta is about.
+        </p>
+
+        <a class="about-link" [href]="phoneHref">
+          <span>Talk to our team</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       STORY
+       ====================================================== -->
+
+  <section class="about-story about-section" aria-labelledby="about-story-title">
+    <div class="container about-story__grid">
+
+      <div class="about-story__visual">
+        <figure class="about-story__image-main">
+          <img src="/meals/sharing.jpg" alt="Friends sharing food and drinks at La Quinta Motel" width="2866"
+            height="3821" loading="lazy" />
+        </figure>
+
+        <figure class="about-story__image-detail">
+          <img src="/rooms/room.jpg" alt="A comfortable room at La Quinta Motel" width="5472" height="3648"
+            loading="lazy" />
+        </figure>
+
+        <div class="about-story__location">
+          <span class="about-story__location-icon">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </span>
+
+          <span>
+            <small>Our home</small>
+            <strong>Nyamata</strong>
+            Bugesera · Rwanda
+          </span>
+        </div>
+      </div>
+
+      <div class="about-story__content">
+        <p class="about-kicker">
+          The La Quinta experience
+        </p>
+
+        <h2 id="about-story-title">
+          Built around a good stay—and a good table.
+        </h2>
+
+        <p class="about-lead">
+          We believe hospitality is often found in simple things
+          done well: somewhere comfortable to sleep, something
+          satisfying to eat, and an atmosphere where you can
+          relax into the moment.
+        </p>
+
+        <p>
+          That idea shapes La Quinta. Our rooms give you somewhere
+          to settle in after the day, while our dining spaces give
+          guests and visitors a reason to stay a little longer.
+        </p>
+
+        <p>
+          It means La Quinta can be part of more than one moment
+          in your day—from waking up after a restful night to
+          sitting around a table with people you enjoy.
+        </p>
+
+        <div class="about-story__statement">
+          <span aria-hidden="true">“</span>
+
+          <p>
+            Stay comfortably. Eat well. Enjoy the people
+            around you.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       THREE PART EXPERIENCE
+       ====================================================== -->
+
+  <section class="about-experience" aria-labelledby="about-experience-title">
+    <div class="container">
+
+      <header class="about-experience__header">
+        <div>
+          <p class="about-kicker">
+            One place, different moments
+          </p>
+
+          <h2 id="about-experience-title">
+            Stay. Dine. Gather.
+          </h2>
+        </div>
+
+        <p>
+          Whether you are here for a night, a meal, or time
+          together, each part of La Quinta is connected by the
+          same idea: make people feel comfortable and welcome.
+        </p>
+      </header>
+
+      <div class="about-experience__grid">
+        <article *ngFor="
+            let experience of experiences;
+            trackBy: trackExperience
+          " class="about-experience__item">
+          <span class="about-experience__icon">
+            <i [class]="'fa-solid ' + experience.icon" aria-hidden="true"></i>
+          </span>
+
+          <h3>{{ experience.title }}</h3>
+
+          <p>{{ experience.description }}</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       ACCOMMODATION
+       ====================================================== -->
+
+  <section class="about-feature about-feature--stay about-section" aria-labelledby="about-stay-title">
+    <div class="container about-feature__grid">
+
+      <div class="about-feature__visual">
+        <img src="/rooms/room.jpg" alt="A comfortable room prepared for guests at La Quinta Motel" width="5472"
+          height="3648" loading="lazy" />
+
+        <span class="about-feature__index" aria-hidden="true">
+          01
+        </span>
+      </div>
+
+      <div class="about-feature__content">
+        <p class="about-kicker">
+          A place to stay
+        </p>
+
+        <h2 id="about-stay-title">
+          Rest should feel uncomplicated.
+        </h2>
+
+        <p class="about-lead">
+          After travelling, working, visiting family, or spending
+          the day around Bugesera, your room should give you space
+          to settle down and recharge.
+        </p>
+
+        <p>
+          At La Quinta, we focus on the essentials of a comfortable
+          stay: thoughtfully prepared rooms, Wi-Fi access, convenient
+          parking, and a team available to help when you need us.
+        </p>
+
+        <ul class="about-feature__points">
+          <li>
+            <i class="fa-solid fa-bed" aria-hidden="true"></i>
+
+            <span>
+              <strong>Comfortable rooms</strong>
+              <small>Spaces prepared for restful nights.</small>
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+
+            <span>
+              <strong>Stay connected</strong>
+              <small>Wi-Fi access during your visit.</small>
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-square-parking" aria-hidden="true"></i>
+
+            <span>
+              <strong>Convenient parking</strong>
+              <small>Parking for guests and visitors.</small>
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-bell-concierge" aria-hidden="true"></i>
+
+            <span>
+              <strong>Helpful service</strong>
+              <small>
+                A welcoming team when you need assistance.
+              </small>
+            </span>
+          </li>
+        </ul>
+
+        <div class="about-feature__actions">
+          <a class="about-button about-button--primary" routerLink="/booking">
+            <span>Book your stay</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <a class="about-link" routerLink="/services">
+            <span>Explore our services</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       DINING
+       ====================================================== -->
+
+  <section class="about-feature about-feature--dining about-section" aria-labelledby="about-dining-title">
+    <div class="container about-feature__grid">
+
+      <div class="about-feature__content">
+        <p class="about-kicker">
+          A place to dine
+        </p>
+
+        <h2 id="about-dining-title">
+          The table is part of the experience.
+        </h2>
+
+        <p class="about-lead">
+          La Quinta is not only somewhere to spend the night.
+          Our dining experience gives guests, friends, families,
+          and visitors somewhere to sit down and enjoy the moment.
+        </p>
+
+        <p>
+          Come for freshly prepared food, drinks, and easy
+          conversation. Meet someone for dinner, spend an evening
+          with friends, or simply take your time over a good meal.
+        </p>
+
+        <div class="about-dining__notes">
+          <span>
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+            Freshly prepared food
+          </span>
+
+          <span>
+            <i class="fa-solid fa-martini-glass" aria-hidden="true"></i>
+            Food &amp; drinks
+          </span>
+
+          <span>
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+            Made for sharing
+          </span>
+
+          <span>
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            Relaxed conversation
+          </span>
+        </div>
+
+        <a class="about-button about-button--outline" [href]="phoneHref">
+          <span>Ask about dining</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="about-feature__visual">
+        <img src="/meals/meat.jpg" alt="A freshly prepared meal at La Quinta Motel" width="1200" height="900"
+          loading="lazy" />
+
+        <span class="about-feature__index" aria-hidden="true">
+          02
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       VALUES
+       ====================================================== -->
+
+  <section class="about-values about-section" aria-labelledby="about-values-title">
+    <div class="container">
+
+      <header class="about-values__header">
+        <div>
+          <p class="about-kicker">
+            What guides us
+          </p>
+
+          <h2 id="about-values-title">
+            The feeling we want every guest to leave with.
+          </h2>
+        </div>
+
+        <p>
+          Good hospitality does not need to feel complicated.
+          For us, it begins with comfort, care, good food, and
+          creating space for people to enjoy their time.
+        </p>
+      </header>
+
+      <div class="about-values__grid">
+        <article *ngFor="
+            let value of values;
+            trackBy: trackValue
+          " class="about-value">
+          <div class="about-value__top">
+            <span class="about-value__icon">
+              <i [class]="'fa-solid ' + value.icon" aria-hidden="true"></i>
+            </span>
+
+            <span class="about-value__number" aria-hidden="true">
+              {{ value.number }}
+            </span>
+          </div>
+
+          <h3>{{ value.title }}</h3>
+
+          <p>{{ value.description }}</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       GATHER
+       ====================================================== -->
+
+  <section class="about-gather about-section" aria-labelledby="about-gather-title">
+    <div class="container about-gather__grid">
+
+      <div class="about-gather__visual">
+        <img src="/space/weekend.jpg" alt="Guests spending an evening together at La Quinta Motel" width="2560"
+          height="1920" loading="lazy" />
+
+        <div class="about-gather__caption">
+          <small>Together at La Quinta</small>
+
+          <strong>
+            Good company deserves somewhere comfortable to gather.
+          </strong>
+        </div>
+      </div>
+
+      <div class="about-gather__content">
+        <p class="about-kicker">
+          A place to gather
+        </p>
+
+        <h2 id="about-gather-title">
+          Not every visit needs an overnight bag.
+        </h2>
+
+        <p class="about-lead">
+          Sometimes you simply need somewhere welcoming to meet,
+          eat, talk, celebrate, or spend an evening together.
+        </p>
+
+        <p>
+          La Quinta welcomes the everyday occasions that bring
+          people around the same table—from dinner with family
+          and drinks with friends to birthdays and relaxed
+          meetups.
+        </p>
+
+        <div class="about-gather__occasions">
+          <span>
+            <i class="fa-solid fa-cake-candles" aria-hidden="true"></i>
+            Birthday dinners
+          </span>
+
+          <span>
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+            Friends &amp; family
+          </span>
+
+          <span>
+            <i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i>
+            Social gatherings
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            Work meetups
+          </span>
+        </div>
+
+        <a class="about-link" [href]="phoneHref">
+          <span>Talk to us about your plans</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       LOCATION
+       ====================================================== -->
+
+  <section class="about-location about-section" aria-labelledby="about-location-title">
+    <div class="container about-location__grid">
+
+      <!-- Location content -->
+      <div class="about-location__content">
+        <p class="about-kicker">
+          Our home in Nyamata
+        </p>
+
+        <h2 id="about-location-title">
+          Part of your time in Bugesera.
+        </h2>
+
+        <p class="about-lead">
+          La Quinta Motel is located in Nyamata, Bugesera District,
+          Rwanda—a place we are happy to call home.
+        </p>
+
+        <p>
+          Whether Nyamata is your destination or simply part of
+          your journey, you can make La Quinta your place to rest,
+          meet, eat, and take some time for yourself.
+        </p>
+
+        <address class="about-location__address">
+          <span>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </span>
+
+          <div>
+            <small>Find us</small>
+            <strong>La Quinta Motel</strong>
+
+            <p>
+              Nyamata, Bugesera District<br />
+              Rwanda
+            </p>
+          </div>
+        </address>
+
+        <div class="about-location__actions">
+          <a class="about-button about-button--primary" [href]="directionsHref" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+
+            <span>Get directions</span>
+          </a>
+
+          <a class="about-link" [href]="phoneHref">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+            <span>{{ phoneNumber }}</span>
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Google Map -->
+      <div class="about-location__visual">
+
+        <iframe class="about-location__map"
+          src="https://www.google.com/maps?q=La%20Quinta%20Motel%20Nyamata%20Rwanda&output=embed"
+          title="Map showing La Quinta Motel in Nyamata, Bugesera District, Rwanda" loading="lazy" allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <!-- Location name overlay -->
+        <div class="about-location__marker">
+
+          <span class="about-location__marker-icon">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </span>
+
+          <span>
+            <small>Our location</small>
+
+            <strong>La Quinta Motel</strong>
+
+            <small>
+              Nyamata · Bugesera · Rwanda
+            </small>
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       FINAL CTA
+       ====================================================== -->
+
+  <section class="about-cta" aria-labelledby="about-cta-title">
+    <div class="container about-cta__content">
+
+      <p class="about-kicker">
+        Come experience La Quinta
+      </p>
+
+      <h2 id="about-cta-title">
+        Come for the stay.
+        <span>Stay for the table.</span>
+      </h2>
+
+      <p>
+        Planning a night in Nyamata, meeting someone for a meal,
+        or bringing people together? La Quinta is ready to
+        welcome you.
+      </p>
+
+      <div class="about-cta__actions">
+        <a class="about-button about-button--light" routerLink="/booking">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+          <span>Book your stay</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <a class="about-cta__phone" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>{{ phoneNumber }}</span>
+        </a>
+      </div>
+
+      <p class="about-cta__note">
+        Accommodation · Dining · Gatherings
+      </p>
+
+    </div>
+  </section>
+
+</main>

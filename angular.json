@@ -1,0 +1,195 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "pnpm",
+    "analytics": "10510243-b3e7-4bf1-894f-9ad768bf539f"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "client": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": ["src/styles.css"],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "security": {
+              "allowedHosts": []
+            },
+            "ssr": {
+              "entry": "src/server.ts"
+            }
+          },
+          "configurations": {
+            "dev": {
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public",
+                  "ignore": ["robots.txt", "sitemap.xml"]
+                },
+                {
+                  "glob": "robots.txt",
+                  "input": "src/seo/dev",
+                  "output": "/"
+                }
+              ],
+              "outputPath": {
+                "base": "dist/client/dev/ssr",
+                "browser": "browser",
+                "server": "server"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                },
+                {
+                  "replace": "src/app/rendering.providers.ts",
+                  "with": "src/app/rendering.providers.ssr.ts"
+                }
+              ],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "security": {
+                "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0"]
+              }
+            },
+            "staging": {
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public",
+                  "ignore": ["robots.txt", "sitemap.xml"]
+                },
+                {
+                  "glob": "robots.txt",
+                  "input": "src/seo/staging",
+                  "output": "/"
+                }
+              ],
+              "outputPath": {
+                "base": "dist/client/staging/ssr",
+                "browser": "browser",
+                "server": "server"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                },
+                {
+                  "replace": "src/app/rendering.providers.ts",
+                  "with": "src/app/rendering.providers.ssr.ts"
+                }
+              ],
+              "optimization": true,
+              "extractLicenses": true,
+              "sourceMap": false,
+              "outputHashing": "all",
+              "security": {
+                "allowedHosts": ["staging.laquintamotel.rw"]
+              },
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                }
+              ]
+            },
+            "prod": {
+              "outputPath": {
+                "base": "dist/client/prod/ssr",
+                "browser": "browser",
+                "server": "server"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/app/rendering.providers.ts",
+                  "with": "src/app/rendering.providers.ssr.ts"
+                }
+              ],
+              "optimization": true,
+              "extractLicenses": true,
+              "sourceMap": false,
+              "outputHashing": "all",
+              "security": {
+                "allowedHosts": ["laquintamotel.rw"]
+              },
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "prod"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "dev": {
+              "buildTarget": "client:build:dev",
+              "proxyConfig": "proxy/proxy.dev.mjs"
+            },
+            "staging": {
+              "buildTarget": "client:build:staging",
+              "proxyConfig": "proxy/proxy.staging.mjs"
+            },
+            "prod": {
+              "buildTarget": "client:build:prod",
+              "proxyConfig": "proxy/proxy.prod.mjs"
+            }
+          },
+          "defaultConfiguration": "dev"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
+  }
+}

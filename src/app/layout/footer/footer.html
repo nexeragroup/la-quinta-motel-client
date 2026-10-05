@@ -1,0 +1,148 @@
+<footer class="footer">
+  <div class="container footer__content">
+
+    <!-- Main brand / booking area -->
+    <section class="footer__intro" aria-labelledby="footer-title">
+      <a class="footer__brand" routerLink="/" aria-label="La Quinta Motel home">
+        <span class="footer__brand-logo">
+          <img ngSrc="/brand/logo-top.png" alt="" width="500" height="500" />
+        </span>
+
+        <span class="footer__brand-copy">
+          <strong>La Quinta</strong>
+          <small>Motel · Nyamata</small>
+        </span>
+      </a>
+
+      <p class="footer__eyebrow">
+        Your stay in Nyamata
+      </p>
+
+      <h2 id="footer-title">
+        Stay well.<br />
+        Dine beautifully.
+      </h2>
+
+      <p class="footer__description">
+        Comfortable rooms, welcoming meals, and warm hospitality
+        in the heart of Bugesera.
+      </p>
+
+      <a class="footer__cta" [href]="phoneHref" aria-label="Call La Quinta Motel to book your stay">
+        <span>Book your stay</span>
+
+        <span class="footer__cta-icon">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </span>
+      </a>
+    </section>
+
+
+    <!-- Explore -->
+    <section class="footer__column" aria-labelledby="footer-explore-title">
+      <h2 id="footer-explore-title">
+        Explore
+      </h2>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a routerLink="/">
+          Home
+        </a>
+
+        <a routerLink="/about">
+          About La Quinta
+        </a>
+
+        <a routerLink="/services">
+          Rooms & services
+        </a>
+
+        <a routerLink="/contact">
+          Contact us
+        </a>
+      </nav>
+    </section>
+
+
+    <!-- Contact -->
+    <section class="footer__column" aria-labelledby="footer-contact-title">
+      <h2 id="footer-contact-title">
+        Contact
+      </h2>
+
+      <div class="footer__contact-list">
+
+        <a class="footer__contact-item" [href]="phoneHref">
+          <span class="footer__contact-icon">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          </span>
+
+          <span>
+            <small>Reservations</small>
+            <strong>+250 788 498 634</strong>
+          </span>
+        </a>
+
+        <a class="footer__contact-item" [href]="emailHref">
+          <span class="footer__contact-icon">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </span>
+
+          <span>
+            <small>Email us</small>
+            <strong>laquintamotel&#64;gmail.com</strong>
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- Location -->
+    <section class="footer__column" aria-labelledby="footer-visit-title">
+      <h2 id="footer-visit-title">
+        Find us
+      </h2>
+
+      <div class="footer__location">
+        <span class="footer__location-icon">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        </span>
+
+        <p>
+          <strong>Nyamata</strong>
+          <span>Bugesera District</span>
+          <span>Rwanda</span>
+        </p>
+      </div>
+
+      <a class="footer__directions" [href]="directionsHref" target="_blank" rel="noopener noreferrer">
+        Get directions
+
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
+    </section>
+
+  </div>
+
+
+  <!-- Bottom -->
+  <div class="footer__bottom">
+    <div class="container footer__bottom-content">
+
+      <p>
+        © {{ currentYear }} La Quinta Motel.
+        <span>All rights reserved.</span>
+      </p>
+
+      <p class="footer__credit">
+        Designed &amp; developed by
+        <a href="https://nexeragroup.rw" target="_blank" rel="noopener noreferrer">
+          Nexera Group
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </p>
+
+    </div>
+  </div>
+</footer>

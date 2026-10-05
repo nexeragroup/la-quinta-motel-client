@@ -1,0 +1,105 @@
+.page {
+  width: 100%;
+  min-height: 100%;
+  padding: var(--page-padding-mobile);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-4);
+}
+
+.public-page {
+  display: grid;
+  min-height: min(42rem, calc(100vh - 11rem));
+  align-items: center;
+  padding: clamp(var(--space-12), 10vw, var(--space-24)) var(--page-padding-mobile);
+}
+
+.public-page__content {
+  max-width: 44rem;
+}
+
+.public-page__content h1,
+.public-page__lead,
+.public-page__eyebrow {
+  margin: 0;
+}
+
+.public-page__eyebrow {
+  margin-bottom: var(--space-3);
+  color: var(--primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.public-page__content h1 {
+  max-width: 20ch;
+  font-size: var(--font-size-display-md);
+}
+
+.public-page__lead {
+  max-width: 38rem;
+  margin-top: var(--space-6);
+  font-size: var(--font-size-lg);
+}
+
+.public-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.public-page__primary-action,
+.public-page__secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-5);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.public-page__primary-action {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.public-page__primary-action:hover {
+  color: var(--on-primary);
+}
+
+.public-page__secondary-action {
+  color: var(--primary);
+}

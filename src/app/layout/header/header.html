@@ -1,0 +1,76 @@
+<header class="header">
+  <div class="container header__content">
+
+    <!-- Brand -->
+    <a class="header__brand" routerLink="/" aria-label="La Quinta Motel home" (click)="closeMenu()">
+      <span class="header__logo">
+        <img ngSrc="/brand/logo-top.png" alt="" width="500" height="500" priority />
+      </span>
+
+      <span class="header__brand-copy">
+        <strong>La Quinta</strong>
+        <small>Motel · Nyamata</small>
+      </span>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="primary-navigation" class="header__nav" [class.header__nav--open]="menuOpen()"
+      aria-label="Primary navigation">
+      @for (item of navigationItems; track item.route) {
+      <a [routerLink]="item.route" routerLinkActive="header__nav-link--active" [routerLinkActiveOptions]="{
+            exact: item.exact ?? false
+          }" (click)="closeMenu()">
+        {{ item.label }}
+      </a>
+      }
+
+      <!-- Mobile-only booking action -->
+      <a class="header__mobile-booking" [href]="bookingPhoneHref" aria-label="Call La Quinta Motel to book your stay"
+        (click)="closeMenu()">
+        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+        <span>
+          <strong>Book your stay</strong>
+          <small>Call us directly</small>
+        </span>
+
+        <i class="fa-solid fa-arrow-right header__mobile-booking-arrow" aria-hidden="true"></i>
+      </a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="header__actions">
+
+      <!-- Booking -->
+      <a class="header__booking-cta" [href]="bookingPhoneHref" aria-label="Call La Quinta Motel to book your stay">
+        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+        <span>Book a stay</span>
+      </a>
+
+      <!-- Theme -->
+      <button class="header__icon-button header__theme-toggle" type="button" [attr.aria-label]="
+          theme.dark()
+            ? 'Switch to light mode'
+            : 'Switch to dark mode'
+        " [attr.title]="
+          theme.dark()
+            ? 'Light mode'
+            : 'Dark mode'
+        " (click)="theme.toggleMode()">
+        <i class="fa-solid" [class.fa-sun]="theme.dark()" [class.fa-moon]="theme.light()" aria-hidden="true"></i>
+      </button>
+
+      <!-- Mobile menu -->
+      <button class="header__icon-button header__menu-toggle" type="button" [attr.aria-expanded]="menuOpen()"
+        aria-controls="primary-navigation" [attr.aria-label]="
+          menuOpen()
+            ? 'Close navigation menu'
+            : 'Open navigation menu'
+        " (click)="toggleMenu()">
+        <i class="fa-solid" [class.fa-xmark]="menuOpen()" [class.fa-bars]="!menuOpen()" aria-hidden="true"></i>
+      </button>
+
+    </div>
+  </div>
+</header>

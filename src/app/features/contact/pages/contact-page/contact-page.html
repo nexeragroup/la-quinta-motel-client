@@ -1,0 +1,55 @@
+<div class="contact-page">
+  <section class="contact-hero" aria-labelledby="contact-title">
+    <img src="/meals/brochette.jpg" alt="A meal prepared at La Quinta restaurant" width="1200" height="900" fetchpriority="high" />
+    <div class="contact-hero__veil" aria-hidden="true"></div>
+    <div class="container contact-hero__content">
+      <p class="contact-kicker">Contact La Quinta</p>
+      <h1 id="contact-title">Plans are better when they start with a conversation.</h1>
+      <p>Call, email, or find us in Nyamata for room availability, dining plans, or your next group occasion.</p>
+    </div>
+  </section>
+
+  <section class="contact-details contact-section" aria-labelledby="details-title">
+    <div class="container">
+      <header class="contact-heading">
+        <p class="contact-kicker">Talk to us</p>
+        <h2 id="details-title">Choose the easiest way to reach us.</h2>
+      </header>
+      <div class="contact-details__grid">
+        <a [href]="phoneHref" class="contact-detail">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Call us</strong><small>+250 788 498 634</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a [href]="emailHref" class="contact-detail">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong>Email us</strong><small>laquintamotel@gmail.com</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a [href]="directionsHref" target="_blank" rel="noreferrer" class="contact-detail">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Visit us</strong><small>Nyamata, Bugesera District, Rwanda</small></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-help contact-section" aria-labelledby="help-title">
+    <div class="container contact-help__grid">
+      <div class="contact-help__visual"><img src="/space/weekend.jpg" alt="Guests enjoying an evening at La Quinta Motel" width="2560" height="1920" loading="lazy" /></div>
+      <div>
+        <p class="contact-kicker">How we can help</p>
+        <h2 id="help-title">Tell us what you are planning.</h2>
+        <p class="contact-lead">The team can help you plan a comfortable visit, whether you are staying the night, joining us for food, or bringing people together.</p>
+        <ul>
+          <li><i class="fa-solid fa-bed" aria-hidden="true"></i><span><strong>Room enquiries</strong> Ask about availability for your preferred dates.</span></li>
+          <li><i class="fa-solid fa-utensils" aria-hidden="true"></i><span><strong>Dining plans</strong> Discuss a table, a meal with friends, or a restaurant visit.</span></li>
+          <li><i class="fa-solid fa-people-group" aria-hidden="true"></i><span><strong>Groups and occasions</strong> Share the size and type of gathering you have in mind.</span></li>
+          <li><i class="fa-solid fa-location-arrow" aria-hidden="true"></i><span><strong>Finding La Quinta</strong> Get directions before you set out.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-visit" aria-labelledby="visit-title">
+    <div class="container contact-visit__content">
+      <div><p class="contact-kicker">In Nyamata</p><h2 id="visit-title">Come in for the stay, the meal, or the moment.</h2></div>
+      <div class="contact-visit__actions"><a class="contact-button" [href]="phoneHref"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call La Quinta</a><a class="contact-directions" [href]="directionsHref" target="_blank" rel="noreferrer">Get directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+    </div>
+  </section>
+</div>
