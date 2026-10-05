@@ -1,0 +1,576 @@
+<main *ngIf="room" class="room-details-page">
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="room-hero" aria-labelledby="room-title">
+    <img class="room-hero__image" [src]="room.heroImage" alt="" width="5472" height="3648" fetchpriority="high" />
+
+    <div class="room-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container room-hero__container">
+
+      <nav class="room-breadcrumb" aria-label="Breadcrumb">
+        <a routerLink="/">
+          Home
+        </a>
+
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+
+        <a routerLink="/rooms">
+          Rooms
+        </a>
+
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+
+        <span aria-current="page">
+          {{ room.name }}
+        </span>
+      </nav>
+
+
+      <div class="room-hero__content">
+
+        <p class="room-kicker">
+          {{ room.eyebrow }}
+        </p>
+
+        <h1 id="room-title">
+          {{ room.name }}
+        </h1>
+
+        <p class="room-hero__lead">
+          {{ room.shortDescription }}
+        </p>
+
+
+        <div class="room-hero__actions">
+
+          <a class="room-button room-button--light" routerLink="/booking">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+            <span>Book this room</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+
+          <a class="room-hero__secondary" [href]="phoneHref">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+            <span>Ask about availability</span>
+          </a>
+
+        </div>
+      </div>
+
+
+      <div class="room-hero__footer">
+
+        <div>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+          <span>
+            Nyamata · Bugesera District · Rwanda
+          </span>
+        </div>
+
+
+        <a [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          {{ phoneNumber }}
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       INTRODUCTION
+       ===================================================== -->
+
+  <section class="room-intro room-section" aria-labelledby="room-intro-title">
+    <div class="container room-intro__grid">
+
+      <div class="room-intro__heading">
+
+        <p class="room-kicker">
+          Your stay
+        </p>
+
+        <h2 id="room-intro-title">
+          A room made for slowing down.
+        </h2>
+
+      </div>
+
+
+      <div class="room-intro__content">
+
+        <p class="room-lead">
+          {{ room.description }}
+        </p>
+
+        <p>
+          After a day of travelling, working, visiting,
+          or exploring Bugesera, your room gives you
+          somewhere to step away from the pace of the day.
+        </p>
+
+        <p>
+          Settle in, take some time for yourself, and when
+          you are ready, the rest of the La Quinta
+          experience is close at hand.
+        </p>
+
+
+        <a class="room-link" [href]="phoneHref">
+          <span>Ask about this room</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FEATURE IMAGE
+       ===================================================== -->
+
+  <section class="room-feature">
+
+    <div class="container">
+
+      <figure class="room-feature__visual">
+
+        <img [src]="room.heroImage" [alt]="room.name + ' at La Quinta Motel'" width="5472" height="3648"
+          loading="lazy" />
+
+        <figcaption>
+          <span>La Quinta Motel</span>
+
+          <strong>
+            Rest. Reset. Enjoy your stay.
+          </strong>
+        </figcaption>
+
+      </figure>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       AMENITIES
+       ===================================================== -->
+
+  <section class="room-amenities room-section" aria-labelledby="room-amenities-title">
+    <div class="container">
+
+      <header class="room-heading room-heading--split">
+
+        <div>
+          <p class="room-kicker">
+            Around your stay
+          </p>
+
+          <h2 id="room-amenities-title">
+            The essentials that make things easier.
+          </h2>
+        </div>
+
+
+        <p>
+          From staying connected to enjoying a meal
+          without going far, La Quinta brings together
+          practical comforts for your time with us.
+        </p>
+
+      </header>
+
+
+      <div class="room-amenities__grid">
+
+        <article *ngFor="
+            let amenity of room.amenities;
+            trackBy: trackAmenity
+          " class="room-amenity">
+
+          <span class="room-amenity__icon">
+            <i [class]="'fa-solid ' + amenity.icon" aria-hidden="true"></i>
+          </span>
+
+          <h3>
+            {{ amenity.title }}
+          </h3>
+
+          <p>
+            {{ amenity.description }}
+          </p>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       STAY EXPERIENCE
+       ===================================================== -->
+
+  <section class="room-experience room-section" aria-labelledby="room-experience-title">
+    <div class="container room-experience__grid">
+
+      <div class="room-experience__visual">
+
+        <img src="/space/weekend.jpg" alt="Guests enjoying time at La Quinta Motel" width="2560" height="1920"
+          loading="lazy" />
+
+        <div class="room-experience__badge">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+          <span>
+            Nyamata · Rwanda
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="room-experience__content">
+
+        <p class="room-kicker">
+          Beyond the room
+        </p>
+
+        <h2 id="room-experience-title">
+          Your stay is part of a bigger experience.
+        </h2>
+
+        <p class="room-lead">
+          La Quinta brings together the quiet of a
+          comfortable room with the energy of good food
+          and time spent around the table.
+        </p>
+
+        <p>
+          Stay in when you want to slow down. Step out
+          when you are ready for a meal, a drink,
+          conversation, or an evening with the people
+          around you.
+        </p>
+
+
+        <div class="room-experience__points">
+
+          <div>
+            <span>01</span>
+
+            <p>
+              <strong>Rest</strong>
+
+              <small>
+                A comfortable place to settle in.
+              </small>
+            </p>
+          </div>
+
+
+          <div>
+            <span>02</span>
+
+            <p>
+              <strong>Dine</strong>
+
+              <small>
+                Fresh food and relaxed moments nearby.
+              </small>
+            </p>
+          </div>
+
+
+          <div>
+            <span>03</span>
+
+            <p>
+              <strong>Enjoy</strong>
+
+              <small>
+                Make your visit more than just a night away.
+              </small>
+            </p>
+          </div>
+
+        </div>
+
+
+        <a class="room-link" routerLink="/services">
+          <span>Discover La Quinta</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       DINING
+       ===================================================== -->
+
+  <section class="room-dining room-section" aria-labelledby="room-dining-title">
+    <div class="container room-dining__grid">
+
+      <div class="room-dining__content">
+
+        <p class="room-kicker">
+          Stay &amp; dine
+        </p>
+
+        <h2 id="room-dining-title">
+          When the room is only the beginning.
+        </h2>
+
+        <p class="room-lead">
+          A comfortable stay is even better when dinner
+          does not require another journey.
+        </p>
+
+        <p>
+          Join us for freshly prepared food, meet friends
+          for a drink, share a meal with family, or simply
+          let the evening continue after you have settled in.
+        </p>
+
+
+        <a class="room-button room-button--outline" routerLink="/dining">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+
+          <span>Explore dining</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+
+
+      <div class="room-dining__gallery">
+
+        <figure class="room-dining__main">
+
+          <img src="/meals/food.jpg" alt="Freshly prepared food at La Quinta Motel" width="3577" height="3577"
+            loading="lazy" />
+
+        </figure>
+
+
+        <figure class="room-dining__secondary">
+
+          <img src="/meals/meat.jpg" alt="A prepared meal at La Quinta Motel" width="1200" height="900"
+            loading="lazy" />
+
+        </figure>
+
+
+        <div class="room-dining__note">
+
+          <small>
+            La Quinta dining
+          </small>
+
+          <strong>
+            Good food, close to your room.
+          </strong>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       GALLERY
+       ===================================================== -->
+
+  <section *ngIf="room.gallery.length" class="room-gallery room-section" aria-labelledby="room-gallery-title">
+    <div class="container">
+
+      <header class="room-heading room-heading--split">
+
+        <div>
+          <p class="room-kicker">
+            Take a look
+          </p>
+
+          <h2 id="room-gallery-title">
+            See your stay before you arrive.
+          </h2>
+        </div>
+
+        <p>
+          A closer look at the room and the spaces
+          that make up your La Quinta experience.
+        </p>
+
+      </header>
+
+
+      <div class="room-gallery__grid" [class.room-gallery__grid--single]="
+          room.gallery.length === 1
+        ">
+
+        <figure *ngFor="
+            let image of room.gallery;
+            trackBy: trackGalleryImage
+          " class="room-gallery__item" [class.room-gallery__item--featured]="
+            image.featured
+          ">
+
+          <img [src]="image.src" [alt]="image.alt" width="5472" height="3648" loading="lazy" />
+
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       BOOKING PANEL
+       ===================================================== -->
+
+  <section class="room-booking room-section" aria-labelledby="room-booking-title">
+    <div class="container room-booking__grid">
+
+      <div class="room-booking__content">
+
+        <p class="room-kicker">
+          Plan your stay
+        </p>
+
+        <h2 id="room-booking-title">
+          Interested in this room?
+        </h2>
+
+        <p>
+          Send a booking request with your preferred dates
+          or speak directly with our team to ask about
+          availability.
+        </p>
+
+      </div>
+
+
+      <div class="room-booking__actions">
+
+        <a class="room-button room-button--primary" routerLink="/booking">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+          <span>Request this room</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+
+        <a class="room-booking__phone" [href]="phoneHref">
+          <span class="room-booking__phone-icon">
+
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          </span>
+
+          <span>
+            <small>
+              Prefer to call?
+            </small>
+
+            <strong>
+              {{ phoneNumber }}
+            </strong>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       BACK TO ROOMS
+       ===================================================== -->
+
+  <section class="room-back">
+
+    <div class="container">
+
+      <a class="room-back__link" routerLink="/rooms">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+
+        <span>
+          Explore all rooms
+        </span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FINAL CTA
+       ===================================================== -->
+
+  <section class="room-cta" aria-labelledby="room-cta-title">
+    <div class="container room-cta__content">
+
+      <p class="room-kicker">
+        Stay at La Quinta
+      </p>
+
+      <h2 id="room-cta-title">
+        Your place to
+        <span>rest in Nyamata.</span>
+      </h2>
+
+      <p>
+        Start your booking request today or call our team
+        to talk about your stay.
+      </p>
+
+
+      <div class="room-cta__actions">
+
+        <a class="room-button room-button--light" routerLink="/booking">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+          <span>Book your stay</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+
+        <a class="room-cta__phone" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          {{ phoneNumber }}
+        </a>
+
+      </div>
+
+
+      <p class="room-cta__note">
+        Accommodation · Dining · Nyamata
+      </p>
+
+    </div>
+  </section>
+
+</main>

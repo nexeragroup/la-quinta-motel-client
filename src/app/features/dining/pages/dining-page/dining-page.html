@@ -1,0 +1,627 @@
+<main class="dining-page">
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="dining-hero" aria-labelledby="dining-title">
+    <img class="dining-hero__image" src="/meals/food.jpg" alt="" width="3577" height="3577" fetchpriority="high" />
+
+    <div class="dining-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container dining-hero__container">
+
+      <div class="dining-hero__content">
+
+        <p class="dining-kicker">
+          Dining at La Quinta · Nyamata
+        </p>
+
+        <h1 id="dining-title">
+          Good food.
+          <span>Better together.</span>
+        </h1>
+
+        <p class="dining-hero__lead">
+          Come for freshly prepared food, stay for the
+          conversation, and enjoy an easy dining experience
+          in the heart of Nyamata.
+        </p>
+
+        <div class="dining-hero__actions">
+
+          <a class="dining-button dining-button--light" [href]="phoneHref">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+            <span>Plan a table</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <a class="dining-hero__secondary" href="#dining-experience">
+            <span>Explore dining</span>
+
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="dining-hero__footer">
+
+        <div>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+          <span>
+            Nyamata · Bugesera District · Rwanda
+          </span>
+        </div>
+
+        <a [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          {{ phoneNumber }}
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       DINING HIGHLIGHTS
+       ===================================================== -->
+
+  <section class="dining-highlights" aria-label="Dining highlights">
+    <div class="container dining-highlights__grid">
+
+      <article *ngFor="
+          let highlight of highlights;
+          trackBy: trackHighlight
+        " class="dining-highlight">
+        <span class="dining-highlight__icon">
+          <i [class]="'fa-solid ' + highlight.icon" aria-hidden="true"></i>
+        </span>
+
+        <div>
+          <h2>
+            {{ highlight.title }}
+          </h2>
+
+          <p>
+            {{ highlight.description }}
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       INTRODUCTION
+       ===================================================== -->
+
+  <section id="dining-experience" class="dining-intro dining-section" aria-labelledby="dining-intro-title">
+    <div class="container dining-intro__grid">
+
+      <div class="dining-intro__visual">
+
+        <figure class="dining-intro__main">
+          <img src="/meals/meat.jpg" alt="A freshly prepared meal at La Quinta Motel" width="1200" height="900"
+            loading="lazy" />
+        </figure>
+
+        <figure class="dining-intro__detail">
+          <img src="/meals/brochette.jpg" alt="Brochettes prepared at La Quinta Motel" loading="lazy" />
+        </figure>
+
+        <div class="dining-intro__label">
+          <span>La Quinta</span>
+          <strong>Food · Drinks · Good company</strong>
+        </div>
+
+      </div>
+
+
+      <div class="dining-intro__content">
+
+        <p class="dining-kicker">
+          Around the table
+        </p>
+
+        <h2 id="dining-intro-title">
+          The kind of place where a meal can become an evening.
+        </h2>
+
+        <p class="dining-lead">
+          Dining at La Quinta is about more than sitting down
+          to eat. It is about slowing the day down and enjoying
+          the people around you.
+        </p>
+
+        <p>
+          Stop by for a meal, meet friends after work, bring
+          the family together, or make dinner part of your
+          stay. The atmosphere is easy, social, and made for
+          spending a little more time around the table.
+        </p>
+
+        <a class="dining-link" [href]="phoneHref">
+          <span>Ask about dining</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FEATURE
+       ===================================================== -->
+
+  <section class="dining-feature" aria-labelledby="dining-feature-title">
+    <img class="dining-feature__image" src="/meals/sharing.jpg" alt="Friends sharing food together at La Quinta Motel"
+      width="2866" height="3821" loading="lazy" />
+
+    <div class="dining-feature__overlay" aria-hidden="true"></div>
+
+    <div class="container dining-feature__content">
+
+      <p class="dining-kicker">
+        More than dinner
+      </p>
+
+      <h2 id="dining-feature-title">
+        Food tastes different when nobody is in a hurry.
+      </h2>
+
+      <p>
+        Take your time. Share another plate. Continue the
+        conversation. La Quinta gives meals room to become
+        moments worth staying for.
+      </p>
+
+      <a class="dining-feature__link" [href]="phoneHref">
+        <span>Plan your visit</span>
+
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       DINING MOMENTS
+       ===================================================== -->
+
+  <section class="dining-moments dining-section" aria-labelledby="moments-title">
+    <div class="container">
+
+      <header class="dining-heading dining-heading--split">
+
+        <div>
+          <p class="dining-kicker">
+            Your kind of evening
+          </p>
+
+          <h2 id="moments-title">
+            Come however the day finds you.
+          </h2>
+        </div>
+
+        <p>
+          A quick meal can stay quick. A long evening can
+          stay long. Enjoy La Quinta in whatever way fits
+          the moment.
+        </p>
+
+      </header>
+
+
+      <div class="dining-moments__grid">
+
+        <article *ngFor="
+            let moment of moments;
+            trackBy: trackMoment
+          " class="dining-moment">
+          <span class="dining-moment__number">
+            {{ moment.number }}
+          </span>
+
+          <div>
+            <h3>
+              {{ moment.title }}
+            </h3>
+
+            <p>
+              {{ moment.description }}
+            </p>
+          </div>
+
+          <i class="fa-solid fa-arrow-right dining-moment__arrow" aria-hidden="true"></i>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FOOD STORY
+       ===================================================== -->
+
+  <section class="dining-story dining-section" aria-labelledby="food-story-title">
+    <div class="container dining-story__grid">
+
+      <div class="dining-story__content">
+
+        <p class="dining-kicker">
+          On the table
+        </p>
+
+        <h2 id="food-story-title">
+          Familiar food, generous moments.
+        </h2>
+
+        <p class="dining-lead">
+          The table is at the centre of the La Quinta
+          dining experience.
+        </p>
+
+        <p>
+          It is where food is shared, conversations grow,
+          and an ordinary visit can turn into something
+          worth remembering.
+        </p>
+
+        <p>
+          Whether you are dining alone, meeting someone,
+          or bringing a group together, our team is here
+          to help make the experience feel easy and
+          welcoming.
+        </p>
+
+        <a class="dining-button dining-button--outline" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>Ask about today's dining</span>
+        </a>
+
+      </div>
+
+
+      <div class="dining-story__visual">
+
+        <figure class="dining-story__large">
+          <img src="/meals/nyama.png" alt="A meal served at La Quinta Motel" loading="lazy" />
+        </figure>
+
+        <figure class="dining-story__small">
+          <img src="/meals/food.jpg" alt="Fresh food prepared at La Quinta Motel" width="3577" height="3577"
+            loading="lazy" />
+        </figure>
+
+        <div class="dining-story__caption">
+          <small>At La Quinta</small>
+
+          <strong>
+            Sit down. Eat well. Stay awhile.
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       GATHER
+       ===================================================== -->
+
+  <section class="dining-gather dining-section" aria-labelledby="gather-title">
+    <div class="container dining-gather__grid">
+
+      <div class="dining-gather__visual">
+        <img src="/space/weekend.jpg" alt="Guests spending an evening together at La Quinta Motel" width="2560"
+          height="1920" loading="lazy" />
+
+        <div class="dining-gather__badge">
+          <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+
+          <span>
+            Better shared
+          </span>
+        </div>
+      </div>
+
+
+      <div class="dining-gather__content">
+
+        <p class="dining-kicker">
+          Bring your people
+        </p>
+
+        <h2 id="gather-title">
+          Some tables need a few more chairs.
+        </h2>
+
+        <p class="dining-lead">
+          Birthdays, family dinners, evenings with friends,
+          and casual work meetups all deserve somewhere
+          comfortable to come together.
+        </p>
+
+        <p>
+          Tell us what you are planning and how many people
+          you expect. Our team can help you understand the
+          best way to arrange your visit.
+        </p>
+
+        <div class="dining-gather__occasions">
+
+          <span>
+            <i class="fa-solid fa-cake-candles" aria-hidden="true"></i>
+
+            Birthday dinners
+          </span>
+
+          <span>
+            <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
+
+            Family time
+          </span>
+
+          <span>
+            <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+
+            Friends
+          </span>
+
+          <span>
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+
+            Work meetups
+          </span>
+
+        </div>
+
+        <a class="dining-button dining-button--primary" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>Ask about a group</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       STAY + DINE
+       ===================================================== -->
+
+  <section class="dining-stay dining-section" aria-labelledby="stay-title">
+    <div class="container dining-stay__grid">
+
+      <div class="dining-stay__content">
+
+        <p class="dining-kicker">
+          Staying with us?
+        </p>
+
+        <h2 id="stay-title">
+          Dinner is even easier when your room is close by.
+        </h2>
+
+        <p>
+          If you are spending the night at La Quinta,
+          dining can become a natural part of your stay.
+          Settle into your room, come down for a meal,
+          enjoy the evening, and end the day without
+          another journey.
+        </p>
+
+        <a class="dining-link" routerLink="/rooms">
+          <span>Explore our rooms</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+
+
+      <div class="dining-stay__visual">
+
+        <img src="/rooms/room.jpg" alt="A comfortable room at La Quinta Motel" width="5472" height="3648"
+          loading="lazy" />
+
+        <div class="dining-stay__label">
+          <i class="fa-solid fa-bed" aria-hidden="true"></i>
+
+          <div>
+            <small>Stay at La Quinta</small>
+            <strong>Rest after the evening.</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       GALLERY
+       ===================================================== -->
+
+  <section class="dining-gallery dining-section" aria-labelledby="gallery-title">
+    <div class="container">
+
+      <header class="dining-heading dining-heading--split">
+
+        <div>
+          <p class="dining-kicker">
+            From our tables
+          </p>
+
+          <h2 id="gallery-title">
+            A taste of La Quinta.
+          </h2>
+        </div>
+
+        <p>
+          Food, people, and the moments that bring
+          the dining experience together.
+        </p>
+
+      </header>
+
+
+      <div class="dining-gallery__grid">
+
+        <figure *ngFor="
+            let image of gallery;
+            trackBy: trackGalleryImage
+          " class="dining-gallery__item" [class.dining-gallery__item--featured]="
+            image.featured
+          ">
+          <img [src]="image.src" [alt]="image.alt" [style.object-position]="image.position || 'center'"
+            loading="lazy" />
+        </figure>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       LOCATION
+       ===================================================== -->
+
+  <section class="dining-location dining-section" aria-labelledby="location-title">
+    <div class="container dining-location__grid">
+
+      <div class="dining-location__content">
+
+        <p class="dining-kicker">
+          Come by
+        </p>
+
+        <h2 id="location-title">
+          Your table is in Nyamata.
+        </h2>
+
+        <p>
+          Visit La Quinta Motel in Nyamata, Bugesera
+          District, for food, drinks, a relaxed evening,
+          or a comfortable stay.
+        </p>
+
+        <address>
+          <span>La Quinta Motel</span>
+          <span>Nyamata, Bugesera District</span>
+          <span>Rwanda</span>
+        </address>
+
+
+        <div class="dining-location__actions">
+
+          <a class="dining-button dining-button--primary" [href]="directionsHref" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+
+            <span>Get directions</span>
+          </a>
+
+          <a class="dining-location__phone" [href]="phoneHref">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+            {{ phoneNumber }}
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="dining-location__visual">
+        <iframe class="dining-location__map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.0243351546583!2d30.0902131!3d-2.1443638000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c354c07b7d0605%3A0x56d635128bc402c!2sLa%20Quinta%20Motel!5e0!3m2!1sen!2srw!4v1791180671533!5m2!1sen!2srw"
+          title="La Quinta Motel location in Nyamata" loading="lazy" allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        <div class="dining-location__name">
+          <span class="dining-location__name-icon">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </span>
+
+          <span class="dining-location__name-copy">
+            <small>Dining in</small>
+            <strong>Nyamata</strong>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FINAL CTA
+       ===================================================== -->
+
+  <section class="dining-cta" aria-labelledby="dining-cta-title">
+    <div class="container dining-cta__content">
+
+      <p class="dining-kicker">
+        See you at the table
+      </p>
+
+      <h2 id="dining-cta-title">
+        Come hungry.
+        <span>Stay for the moment.</span>
+      </h2>
+
+      <p>
+        Call our team about dining, a group visit,
+        or making La Quinta part of your evening.
+      </p>
+
+
+      <div class="dining-cta__actions">
+
+        <a class="dining-button dining-button--light" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>Plan your table</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <a class="dining-cta__directions" [href]="directionsHref" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+          Get directions
+        </a>
+
+      </div>
+
+
+      <p class="dining-cta__note">
+        Food · Drinks · Groups · Nyamata
+      </p>
+
+    </div>
+  </section>
+
+</main>

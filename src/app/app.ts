@@ -1,4 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, isDevMode } from '@angular/core';
+import { ThemeService } from './core/services/theme.service';
+import { SeoService } from './core/services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,12 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('client');
+  protected readonly theme = inject(ThemeService);
+  protected readonly showThemePreview = isDevMode();
+
+  private readonly seo = inject(SeoService);
+
+  constructor() {
+    this.seo.initialize();
+  }
 }

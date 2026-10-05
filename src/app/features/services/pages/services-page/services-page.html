@@ -1,0 +1,544 @@
+<main class="services-page">
+
+  <!-- ======================================================
+       HERO
+       ====================================================== -->
+
+  <section class="services-hero" aria-labelledby="services-title">
+    <img class="services-hero__image" src="/meals/food.jpg" alt="" width="3577" height="3577" fetchpriority="high" />
+
+    <div class="services-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container services-hero__container">
+      <div class="services-hero__content">
+        <p class="services-kicker">
+          Services at La Quinta
+        </p>
+
+        <h1 id="services-title">
+          Everything you need
+          <span>for an easier visit.</span>
+        </h1>
+
+        <p class="services-hero__lead">
+          Comfortable accommodation, freshly prepared food,
+          welcoming spaces, and thoughtful hospitality—all
+          brought together in one place in Nyamata.
+        </p>
+
+        <div class="services-hero__actions">
+          <a class="services-button services-button--light" routerLink="/booking">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+            <span>Book your stay</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <a class="services-hero__secondary" href="#services-overview">
+            <span>Explore our services</span>
+
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="services-hero__footer">
+        <div>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+          <span>Nyamata · Bugesera District · Rwanda</span>
+        </div>
+
+        <a [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>{{ phoneNumber }}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       SERVICE OVERVIEW
+       ====================================================== -->
+
+  <section id="services-overview" class="services-overview services-section" aria-labelledby="services-overview-title">
+    <div class="container">
+
+      <header class="services-heading services-heading--split">
+        <div>
+          <p class="services-kicker">
+            One place, more ways to enjoy it
+          </p>
+
+          <h2 id="services-overview-title">
+            Your time at La Quinta, your way.
+          </h2>
+        </div>
+
+        <p>
+          Some visits begin with a room. Others begin around a
+          table. At La Quinta, accommodation, dining, and time
+          together are all part of the same welcoming experience.
+        </p>
+      </header>
+
+
+      <div class="services-overview__grid">
+        <article *ngFor="
+            let service of serviceCategories;
+            trackBy: trackService
+          " class="services-overview__item">
+          <div class="services-overview__top">
+            <span class="services-overview__icon">
+              <i class="fa-solid" [class]="service.icon" aria-hidden="true"></i>
+            </span>
+
+            <span class="services-overview__number" aria-hidden="true">
+              {{ service.number }}
+            </span>
+          </div>
+
+          <h3>{{ service.title }}</h3>
+
+          <p>{{ service.description }}</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       ACCOMMODATION
+       ====================================================== -->
+
+  <section class="services-feature services-feature--stay services-section" aria-labelledby="services-stay-title">
+    <div class="container services-feature__grid">
+
+      <div class="services-feature__visual">
+        <img src="/rooms/room.jpg" alt="A comfortable room prepared for guests at La Quinta Motel" width="5472"
+          height="3648" loading="lazy" />
+
+        <span class="services-feature__number" aria-hidden="true">
+          01
+        </span>
+      </div>
+
+
+      <div class="services-feature__content">
+        <p class="services-kicker">
+          Accommodation
+        </p>
+
+        <h2 id="services-stay-title">
+          A comfortable place to end the day.
+        </h2>
+
+        <p class="services-lead">
+          Whether you are visiting Nyamata for work, seeing family,
+          spending the weekend nearby, or simply passing through,
+          a good night begins with somewhere you can settle in.
+        </p>
+
+        <p>
+          Our rooms focus on the essentials that help make a stay
+          feel easy: comfort, cleanliness, connectivity, convenient
+          parking, and a welcoming team when you need assistance.
+        </p>
+
+        <ul class="services-feature__list">
+          <li>
+            <span class="services-feature__list-icon">
+              <i class="fa-solid fa-bed" aria-hidden="true"></i>
+            </span>
+
+            <span>
+              <strong>Comfortable rooms</strong>
+              <small>
+                A restful place to recharge between your plans.
+              </small>
+            </span>
+          </li>
+
+          <li>
+            <span class="services-feature__list-icon">
+              <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+            </span>
+
+            <span>
+              <strong>Wi-Fi access</strong>
+              <small>
+                Stay connected throughout your visit.
+              </small>
+            </span>
+          </li>
+
+          <li>
+            <span class="services-feature__list-icon">
+              <i class="fa-solid fa-square-parking" aria-hidden="true"></i>
+            </span>
+
+            <span>
+              <strong>Secure parking</strong>
+              <small>
+                Convenient parking for guests and visitors.
+              </small>
+            </span>
+          </li>
+
+          <li>
+            <span class="services-feature__list-icon">
+              <i class="fa-solid fa-bell-concierge" aria-hidden="true"></i>
+            </span>
+
+            <span>
+              <strong>Helpful hospitality</strong>
+              <small>
+                A welcoming team ready to assist.
+              </small>
+            </span>
+          </li>
+        </ul>
+
+
+        <div class="services-feature__actions">
+          <a class="services-button services-button--primary" routerLink="/booking">
+            <span>Book your stay</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <a class="services-link" routerLink="/rooms">
+            <span>Explore rooms</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       DINING
+       ====================================================== -->
+
+  <section class="services-feature services-feature--dining services-section" aria-labelledby="services-dining-title">
+    <div class="container services-feature__grid">
+
+      <div class="services-feature__content">
+        <p class="services-kicker">
+          Restaurant &amp; dining
+        </p>
+
+        <h2 id="services-dining-title">
+          Good food deserves time around the table.
+        </h2>
+
+        <p class="services-lead">
+          You do not have to be staying with us to enjoy La Quinta.
+          Come for a meal, meet friends for drinks, or make dinner
+          part of your evening in Nyamata.
+        </p>
+
+        <p>
+          Our dining experience brings together freshly prepared
+          food and an easy social atmosphere where guests and
+          visitors can sit down, share a table, and enjoy their time.
+        </p>
+
+
+        <div class="services-dining__notes">
+          <div>
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+
+            <span>
+              <strong>Freshly prepared food</strong>
+              <small>
+                Satisfying food prepared for the table.
+              </small>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-martini-glass" aria-hidden="true"></i>
+
+            <span>
+              <strong>Food &amp; drinks</strong>
+              <small>
+                Settle in for a meal or an easy evening.
+              </small>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+
+            <span>
+              <strong>Made for sharing</strong>
+              <small>
+                A welcoming setting for friends and family.
+              </small>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+
+            <span>
+              <strong>Relaxed atmosphere</strong>
+              <small>
+                Good food, company, and conversation.
+              </small>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="services-feature__actions">
+          <a class="services-button services-button--outline" [href]="phoneHref">
+            <span>Ask about dining</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <a class="services-link" routerLink="/dining">
+            <span>Explore dining</span>
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="services-feature__visual">
+        <img src="/meals/meat.jpg" alt="A freshly prepared meal at La Quinta Motel" width="1200" height="900"
+          loading="lazy" />
+
+        <span class="services-feature__number" aria-hidden="true">
+          02
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       GATHERINGS
+       ====================================================== -->
+
+  <section class="services-gather services-section" aria-labelledby="services-gather-title">
+    <div class="container services-gather__grid">
+
+      <div class="services-gather__visual">
+        <img src="/meals/sharing.jpg" alt="Friends sharing food and drinks at La Quinta Motel" width="2866"
+          height="3821" loading="lazy" />
+
+        <div class="services-gather__caption">
+          <small>Together at La Quinta</small>
+
+          <strong>
+            Good food. Good company. Time well spent.
+          </strong>
+        </div>
+      </div>
+
+
+      <div class="services-gather__content">
+        <p class="services-kicker">
+          Gather together
+        </p>
+
+        <h2 id="services-gather-title">
+          Make room for the plans worth sharing.
+        </h2>
+
+        <p class="services-lead">
+          Not every visit is only about a room or a meal. Sometimes
+          it is about the people around the table and the reason
+          everyone came together.
+        </p>
+
+        <p>
+          Whether you are planning a birthday dinner, meeting
+          colleagues, catching up with friends, or spending time
+          with family, talk to our team about what you have in mind.
+        </p>
+
+
+        <div class="services-gather__occasions" aria-label="Gathering possibilities">
+          <span *ngFor="
+              let gathering of gatheringTypes;
+              trackBy: trackGathering
+            ">
+            <i class="fa-solid" [class]="gathering.icon" aria-hidden="true"></i>
+
+            {{ gathering.label }}
+          </span>
+        </div>
+
+
+        <a class="services-button services-button--outline" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>Talk to us about your plans</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       PRACTICAL COMFORTS
+       ====================================================== -->
+
+  <section class="services-comforts services-section" aria-labelledby="services-comforts-title">
+    <div class="container">
+
+      <header class="services-heading services-heading--split">
+        <div>
+          <p class="services-kicker">
+            The practical things
+          </p>
+
+          <h2 id="services-comforts-title">
+            Simple comforts that make a difference.
+          </h2>
+        </div>
+
+        <p>
+          The details around a visit matter too. We focus on
+          practical comforts that help make your time at
+          La Quinta easier from arrival to departure.
+        </p>
+      </header>
+
+
+      <div class="services-comforts__grid">
+        <article *ngFor="
+            let comfort of comforts;
+            trackBy: trackComfort
+          " class="services-comfort">
+          <span class="services-comfort__icon">
+            <i class="fa-solid" [class]="comfort.icon" aria-hidden="true"></i>
+          </span>
+
+          <h3>{{ comfort.title }}</h3>
+
+          <p>{{ comfort.description }}</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       EXPERIENCE
+       ====================================================== -->
+
+  <section class="services-experience" aria-labelledby="services-experience-title">
+    <div class="container services-experience__grid">
+
+      <div class="services-experience__content">
+        <p class="services-kicker">
+          More than one reason to visit
+        </p>
+
+        <h2 id="services-experience-title">
+          Stay for the night.
+          <span>Enjoy the whole experience.</span>
+        </h2>
+
+        <p>
+          Your time at La Quinta does not have to begin and end
+          at your room door. Have something to eat, spend time
+          with people you know, or simply settle into the
+          atmosphere before calling it a night.
+        </p>
+
+        <a class="services-experience__link" routerLink="/about">
+          <span>Discover La Quinta</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+
+      <div class="services-experience__images">
+        <figure class="services-experience__image-main">
+          <img src="/space/weekend.jpg" alt="Guests enjoying an evening at La Quinta Motel" width="2560" height="1920"
+            loading="lazy" />
+        </figure>
+
+        <figure class="services-experience__image-detail">
+          <img src="/meals/brochette.jpg" alt="Fresh food prepared at La Quinta Motel" width="1200" height="900"
+            loading="lazy" />
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       FINAL CTA
+       ====================================================== -->
+
+  <section class="services-cta" aria-labelledby="services-cta-title">
+    <div class="container services-cta__content">
+
+      <p class="services-kicker">
+        Plan your visit
+      </p>
+
+      <h2 id="services-cta-title">
+        A room, a table,
+        <span>or time together.</span>
+      </h2>
+
+      <p class="services-cta__lead">
+        Tell us what brings you to La Quinta and our team can help
+        you plan your stay, dining visit, or gathering in Nyamata.
+      </p>
+
+
+      <div class="services-cta__actions">
+        <a class="services-button services-button--light" routerLink="/booking">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+          <span>Book your stay</span>
+
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <a class="services-cta__phone" [href]="phoneHref">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+          <span>{{ phoneNumber }}</span>
+        </a>
+      </div>
+
+
+      <div class="services-cta__footer">
+        <span>
+          Accommodation · Dining · Gatherings
+        </span>
+
+        <a [href]="directionsHref" target="_blank" rel="noopener noreferrer">
+          <span>Get directions</span>
+
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
