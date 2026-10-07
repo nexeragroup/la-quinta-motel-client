@@ -7,6 +7,11 @@ export const appRoutes: Routes = [
     component: PublicLayout,
     children: [
       {
+        path: 'home',
+        pathMatch: 'full',
+        redirectTo: '',
+      },
+      {
         path: 'about',
         loadChildren: () =>
           import('./features/about/about.module').then((module) => module.AboutModule),
